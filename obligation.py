@@ -42,3 +42,20 @@
 #
 # -----------------------------------------------------------------------------
 # Напишите программу ниже:
+print("Введите цену покупки облигации (в рублях)")
+buying_price=float(input())
+print("Введите цену погашения облигации (в рублях)")
+celling_price=float(input())
+print("Введите сумму разовой купонной выплаты (в рублях)")
+regular_payment=float(input())
+print("Введите периодичность выплаты купонов (в месяцах)")
+regularity=float(input())
+print("Введите комиссию брокера (в процентах)")
+comission=float(input())
+print("Введите период до погашения облигации (в месяцах)")
+months_left=float(input())
+money_before_selling=months_left*regular_payment/regularity
+total_money=money_before_selling+celling_price
+PROFIT=total_money-buying_price-comission*buying_price/100
+tax=max(0, 0.13*PROFIT)
+print(PROFIT-tax)
